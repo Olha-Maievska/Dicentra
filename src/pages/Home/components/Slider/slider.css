@@ -1,0 +1,29 @@
+.active-slider {
+  display: flex;
+}
+
+.active-content {
+  animation: animToBottom 1s;
+}
+
+.active-img {
+  animation: animToTop 1s;
+}
+
+@keyframes animToTop {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes animToBottom {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}

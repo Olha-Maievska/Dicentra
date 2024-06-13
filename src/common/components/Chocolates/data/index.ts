@@ -1,0 +1,42 @@
+export const chocolatesData = [
+  {
+    id: '01',
+    name: 'Fererro Rocher Heart',
+    price: 17,
+    article: 405,
+    actionPrice: 13,
+    img: 'ferrero-heart.png',
+  },
+  {
+    id: '02',
+    name: 'Raffaello Piatta',
+    article: 406,
+    price: 12,
+    actionPrice: 9,
+    img: 'raffaello-piatta.png',
+  },
+  {
+    id: '03',
+    name: 'Fererro Rocher',
+    article: 407,
+    price: 14,
+    actionPrice: 10,
+    img: 'ferrero-rocher.png',
+  },
+  {
+    id: '04',
+    name: 'Raffaello',
+    article: 408,
+    price: 10,
+    actionPrice: 7,
+    img: 'raffaello.png',
+  },
+  {
+    id: '05',
+    name: 'Fererro Rocher Collection',
+    article: 409,
+    price: 16,
+    actionPrice: 12,
+    img: 'ferrero-t15.png',
+  },
+]
