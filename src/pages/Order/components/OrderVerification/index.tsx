@@ -28,7 +28,6 @@ const OrderVerification: FC<OrderVerificationProps> = ({
 
   const handleClickFinish = () => {
     dispatch(setPayment(paymentRadio))
-    console.log(paymentRadio)
 
     if (paymentRadio === 'byCard') {
       dispatch(setPaymentModal(true))

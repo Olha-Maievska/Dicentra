@@ -73,7 +73,7 @@ const FlowersItem: FC<IFlowersItemData> = ({
           <>
             <img
               className="w-48 h-52 object-contain bg-white cursor-pointer"
-              src={`images/products/${img}`}
+              src={`/images/products/${img}`}
               alt={name}
             />
 
