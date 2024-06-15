@@ -1,7 +1,7 @@
 # Dicentra Flowers
 
 Created for portfolio.
-To view the site: https://dicantra.vercel.app/
+To view the site: https://dicentra.vercel.app/
 
 The site uses client-side state instead of a server. An update with server-side integration is expected soon.
 
