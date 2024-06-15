@@ -8,6 +8,8 @@
       name="description"
       content="Dicentra - Beautiful bouquets of flowers for you. No days off. Round-the-clock delivery of bouquets. Always fresh flowers. We give love "
     />
+    <meta name="keywords" content="flowers, bouquets, the best bouquets" />
+    <meta name="author" content="Olha Maievska" />
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,7 +18,26 @@
       rel="stylesheet"
     />
     <title>DICENTRA</title>
-    <script type="module" crossorigin src="/assets/index-Bb9130dJ.js"></script>
+
+    <script type="text/javascript">
+      ;(function (l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search
+            .slice(1)
+            .split('&')
+            .map(function (s) {
+              return s.replace(/~and~/g, '&')
+            })
+            .join('?')
+          window.history.replaceState(
+            null,
+            null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+          )
+        }
+      })(window.location)
+    </script>
+    <script type="module" crossorigin src="/assets/index-BHUATeG1.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-BTdpBQcf.css">
   </head>
   <body>
