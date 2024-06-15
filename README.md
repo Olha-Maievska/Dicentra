@@ -1,12 +1,7 @@
-# Dicentra Flowers showPackages
+# Dicentra Flowers
 
 Created for portfolio.
-
-<<<<<<< HEAD
-To view the site: https://olha-maievska.github.io/DicentraApp/front
-=======
 To view the site: https://dicantra.vercel.app/
->>>>>>> a4e224bbfda89255d60c28ddf5a974f4d7746b6e
 
 The site uses client-side state instead of a server. An update with server-side integration is expected soon.
 
