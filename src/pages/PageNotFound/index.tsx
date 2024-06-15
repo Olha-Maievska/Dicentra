@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 const PageNotFound = () => {
   const navidate = useNavigate()
   return (
-    <section className="bg-light h-screen flex justify-center items-center flex-col">
+    <section className="bg-light min-h-screen flex justify-center items-center flex-col">
       <div className="container">
         <div className="relative flex justify-between items-center border border-gold border-solid px-40 py-32 mx-auto mb-10">
           <p className="text-4xl">
