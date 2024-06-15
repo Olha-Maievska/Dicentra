@@ -82,7 +82,7 @@ const OrderPayment = () => {
             {...register('cardOwner', {
               onChange(event) {
                 event.target.value = event.target.value.replace(
-                  /[^a-zA-Z]+/g,
+                  /[^a-zA-Z]\s+/g,
                   ''
                 )
               },

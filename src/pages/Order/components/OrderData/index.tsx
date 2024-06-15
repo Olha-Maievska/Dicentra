@@ -98,7 +98,7 @@ const OrderData: FC<OrderDataProps> = ({
   return (
     <>
       <h4 className="text-xl font-medium mb-6">Contact Information</h4>
-      <form className="flex justify-between h-[260px]">
+      <form className="flex justify-between h-[260px]" noValidate>
         {currentUser ? (
           <OrderPersonalData />
         ) : (

@@ -5,6 +5,7 @@ import { FC } from 'react'
 import OrderPayment from '../OrderPayment'
 import OrderSuccess from '../OrderSuccess'
 import { resetOrder } from '@/features/order/orderSlice'
+import { useNavigate } from 'react-router-dom'
 
 interface OrderPaymentProps {
   resetSteps: () => void
@@ -13,12 +14,14 @@ interface OrderPaymentProps {
 const OrderModal: FC<OrderPaymentProps> = ({ resetSteps }) => {
   const { paymentModal, successModal } = useAppSelector((state) => state.modal)
   const dispatch = useAppDispatch()
+  const navigate = useNavigate()
 
   const handleCloseModal = () => {
     if (paymentModal) {
       dispatch(setPaymentModal(false))
     } else {
       dispatch(setSuccessModal(false))
+      navigate('/')
       dispatch(resetOrder())
       resetSteps()
     }

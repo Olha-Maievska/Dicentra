@@ -32,6 +32,7 @@ const modalSlice = createSlice({
     },
     setPaymentModal: (state, { payload }: PayloadAction<boolean>) => {
       state.paymentModal = payload
+      state.successModal = false
     },
     setSuccessModal: (state, { payload }: PayloadAction<boolean>) => {
       state.successModal = payload
