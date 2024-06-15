@@ -15,7 +15,7 @@ interface PageWrapperProps {
 
 const PageWrapper: FC<PageWrapperProps> = ({ children, title, navArr }) => {
   return (
-    <section className="bg-light pt-48 pb-40 font-roboto">
+    <section className="bg-light pt-48 pb-40 font-roboto min-h-screen">
       <div className="container">
         <ul className="flex justify-center mb-8 text-sm text-dark">
           <li className="pr-1 after:content-['/'] after:pl-1">

@@ -10,7 +10,7 @@ const Layout = () => {
     <div className="flex flex-col relative">
       <ScrollToTop />
       <Header />
-      <main className="min-h-screen">
+      <main>
         <Outlet></Outlet>
       </main>
       <Footer />

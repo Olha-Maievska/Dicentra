@@ -15,7 +15,7 @@ const MyProfile = () => {
   }
 
   return (
-    <div className="bg-light h-screen text-dark pt-56">
+    <div className="bg-light min-h-screen text-dark pt-56">
       <div className="container">
         <div className="border border-white p-16 flex justify-between relative mb-10">
           <PersonalData />

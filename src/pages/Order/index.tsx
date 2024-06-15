@@ -29,7 +29,7 @@ const Order = () => {
   }
 
   return (
-    <div className="pt-48 bg-light pb-28 font-roboto relative">
+    <div className="pt-48 bg-light pb-28 font-roboto relative min-h-screen">
       <div className="container">
         <div className="flex  justify-between">
           <div className="w-[858px] h-[720px] border border-gold p-12 relative">
