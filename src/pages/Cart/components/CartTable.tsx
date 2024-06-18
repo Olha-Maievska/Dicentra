@@ -19,20 +19,11 @@ const CartTable = () => {
   const { cart } = useAppSelector((state) => state.cart)
   const dispatch = useAppDispatch()
 
-  const handleCountToDown = (
-    id: string,
-    count: number,
-    withTogether: boolean
-  ) => {
+  const handleCountToDown = (id: string, count: number) => {
     if (count === 1) {
       return
     } else {
-      dispatch(
-        setProductCountToDown({
-          id: id,
-          withTogether: withTogether ? withTogether : false,
-        })
-      )
+      dispatch(setProductCountToDown(id))
     }
   }
 
@@ -56,7 +47,10 @@ const CartTable = () => {
         </TableHead>
         <TableBody>
           {cart.map(
-            ({ product, count, price, priceWithCount, withTogether }, i) => {
+            (
+              { product, count, price, priceWithCount, withTogether, id },
+              i
+            ) => {
               return (
                 <TableRow key={`${product.id}${i}`}>
                   <TableCell>
@@ -71,17 +65,8 @@ const CartTable = () => {
                   <TableCell className="w-[158px]" align="center">
                     <CountInput
                       count={count}
-                      countToDown={() =>
-                        handleCountToDown(product.id, count, withTogether!)
-                      }
-                      countToUp={() =>
-                        dispatch(
-                          setProductCountToUp({
-                            id: product.id,
-                            withTogether: withTogether ? withTogether : false,
-                          })
-                        )
-                      }
+                      countToDown={() => handleCountToDown(id, count)}
+                      countToUp={() => dispatch(setProductCountToUp(id))}
                     />
                   </TableCell>
                   <TableCell className="w-[158px]" align="center">
@@ -90,16 +75,7 @@ const CartTable = () => {
                     </div>
                   </TableCell>
                   <TableCell align="center">
-                    <button
-                      onClick={() =>
-                        dispatch(
-                          deleteFromCart({
-                            id: product.id,
-                            withTogether: withTogether ? withTogether : false,
-                          })
-                        )
-                      }
-                    >
+                    <button onClick={() => dispatch(deleteFromCart(id))}>
                       <img src="/images/icons/basket.svg" alt="basket.svg" />
                     </button>
                   </TableCell>

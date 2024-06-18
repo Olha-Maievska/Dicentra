@@ -1,10 +1,10 @@
 import { ChangeEvent, useEffect, useState } from 'react'
-import { NavLink } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '@/hooks/hooks'
 import FlowersItem from '@/common/components/FlowersItem'
 import { flowersData } from './data'
 import { getFlowers } from '@/features/flowers/flowersSlice'
 import { IFlowerItem, IFlowerKind } from '@/common/dto/getFlowersDto'
+import { NavLink } from 'react-router-dom'
 
 const Bouquets = () => {
   const { list } = useAppSelector((state) => state.flowers)
@@ -69,7 +69,7 @@ const Bouquets = () => {
   }, [dispatch, list])
 
   return (
-    <section className="pt-48 pb-40 bg-light">
+    <section className="pt-48 pb-40 bg-light min-h-screen">
       <div className="container">
         <div className="relative">
           <ul className="flex justify-center mb-8 text-sm font-thin text-dark">

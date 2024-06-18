@@ -1,4 +1,11 @@
-import { Dispatch, FC, SetStateAction, useEffect, useRef } from 'react'
+import {
+  Dispatch,
+  FC,
+  SetStateAction,
+  useEffect,
+  useRef,
+  useState,
+} from 'react'
 import { Link } from 'react-router-dom'
 import { IFlowerItem } from '@/common/dto/getFlowersDto'
 import { useAppDispatch, useAppSelector } from '@/hooks/hooks'
@@ -6,7 +13,6 @@ import { setFlowerItem } from '@/features/flowers/flowersSlice'
 import DarktBtn from '../../UI/Buttons/DarkBtn'
 import { CircularProgress } from '@mui/material'
 import { addItemToCart } from '@/features/cart/cartSlice'
-import { isAddedToCart } from '@/utils/helpers'
 
 interface IFlowersItemData {
   data: IFlowerItem
@@ -23,7 +29,7 @@ const FlowersItem: FC<IFlowersItemData> = ({
   const dispatch = useAppDispatch()
   const { cart } = useAppSelector((state) => state.cart)
 
-  const isAdded = isAddedToCart(id, cart)
+  const [isAdded, setIsAdded] = useState(false)
   const priceEnd = actionPrice ? actionPrice : price
 
   const itemRef = useRef<HTMLDivElement | null>(null)
@@ -42,6 +48,7 @@ const FlowersItem: FC<IFlowersItemData> = ({
   const addProductToCart = () => {
     dispatch(
       addItemToCart({
+        id: data.id,
         product: data,
         withTogether: false,
         count: 1,
@@ -56,6 +63,13 @@ const FlowersItem: FC<IFlowersItemData> = ({
       setItemWidth(itemRef!.current!.offsetWidth)
     } else return
   }, [setItemWidth])
+
+  useEffect(() => {
+    const found = cart.find((el) => el.id === id)
+    if (found) {
+      setIsAdded(true)
+    } else false
+  }, [cart, id])
 
   return (
     <div className="min-w-[254px] pr-[10px] mb-12" ref={itemRef}>

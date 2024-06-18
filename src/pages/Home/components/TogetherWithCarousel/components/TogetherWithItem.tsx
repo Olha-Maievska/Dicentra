@@ -26,7 +26,8 @@ const TogetherWithItem: FC<TogetherWithItemProps> = ({
   const [isAdded, setIsAdded] = useState(false)
 
   const itemRef = useRef<HTMLDivElement | null>(null)
-  const { img, name, togetherWith, price } = data
+  const { img, name, togetherWith, price, id } = data
+  const newID = `${id}${togetherWith?.id}`
   const priceWithout = price + togetherWith!.price
   const priceWith = price + togetherWith!.actionPrice
   const saving = priceWithout - priceWith
@@ -34,6 +35,7 @@ const TogetherWithItem: FC<TogetherWithItemProps> = ({
   const addProductToCart = () => {
     dispatch(
       addItemToCart({
+        id: newID,
         product: data,
         withTogether: true,
         count: 1,
@@ -50,15 +52,13 @@ const TogetherWithItem: FC<TogetherWithItemProps> = ({
   }, [setItemWidth])
 
   useEffect(() => {
-    const found = cart.some(
-      (el) => el.product.id === data.id && el.withTogether
-    )
+    const found = cart.some((el) => el.id === newID)
     if (found) {
       setIsAdded(true)
     } else {
       setIsAdded(false)
     }
-  }, [cart, data.id])
+  }, [cart, newID])
 
   return (
     <div className="min-w-1/2 pr-4" ref={itemRef}>

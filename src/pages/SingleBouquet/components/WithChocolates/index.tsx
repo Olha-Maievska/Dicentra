@@ -13,6 +13,7 @@ const WithChocolates: FC<ITogetherWithItem> = ({ item }) => {
   const { cart } = useAppSelector((state) => state.cart)
 
   const [isAdded, setIsAdded] = useState(false)
+  const newID = `${item.id}${item.togetherWith?.id}`
 
   const priceWithout = item.price! + item?.togetherWith!.price
   const priceWith = item!.price! + item!.togetherWith!.actionPrice!
@@ -22,6 +23,7 @@ const WithChocolates: FC<ITogetherWithItem> = ({ item }) => {
     setIsAdded(true)
     dispatch(
       addItemToCart({
+        id: newID,
         product: item,
         withTogether: true,
         count: 1,
@@ -33,13 +35,13 @@ const WithChocolates: FC<ITogetherWithItem> = ({ item }) => {
 
   useEffect(() => {
     cart.map((el) => {
-      if (el.product.id === item.id && el.withTogether) {
+      if (el.id === newID) {
         setIsAdded(true)
       } else {
         setIsAdded(false)
       }
     })
-  }, [cart, item.id])
+  }, [cart, newID])
 
   return (
     <div className="my-24 bg-white text-dark p-10" key={item.id}>

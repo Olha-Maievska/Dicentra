@@ -1,5 +1,4 @@
 import { IFlowerItem } from '@/common/dto/getFlowersDto'
-import { ProductWithCount } from '@/features/cart/cartSlice'
 
 export const shortFileName = (str: string) => {
   const arr = str.split('.')
@@ -14,8 +13,4 @@ export const currentPrice = (obj: IFlowerItem) => {
   } else {
     return obj.price + obj.togetherWith.actionPrice
   }
-}
-
-export const isAddedToCart = (id: string, arr: Array<ProductWithCount>) => {
-  return arr.find((el) => el.product.id === id)
 }

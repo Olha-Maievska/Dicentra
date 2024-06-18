@@ -41,7 +41,7 @@ const SingleBouquet = () => {
   }, [flowerItem])
 
   return (
-    <section className="pt-48 bg-light relative font-roboto">
+    <section className="pt-48 bg-light relative font-roboto min-h-screen">
       <div className="container">
         <ul className="flex justify-center mb-8 text-sm text-dark">
           <li className="pr-1 after:content-['/'] after:pl-1">

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import {
   addPriceWithCount,
   minusPriceWithCount,
@@ -7,7 +7,6 @@ import { useAppDispatch, useAppSelector } from '@/hooks/hooks'
 import DarktBtn from '@/common/UI/Buttons/DarkBtn'
 import { addItemToCart } from '@/features/cart/cartSlice'
 import CountInput from '@/common/UI/Inputs/CountInput'
-import { isAddedToCart } from '@/utils/helpers'
 
 const Count = () => {
   const dispatch = useAppDispatch()
@@ -15,8 +14,8 @@ const Count = () => {
   const { cart } = useAppSelector((state) => state.cart)
 
   const [count, setCount] = useState(1)
+  const [isAdded, setIsAdded] = useState(false)
 
-  const isAdded = isAddedToCart(flowerItem!.id, cart)
   const price = flowerItem?.actionPrice
     ? flowerItem.actionPrice
     : flowerItem?.price
@@ -35,6 +34,7 @@ const Count = () => {
   const addProcuctToCart = () => {
     dispatch(
       addItemToCart({
+        id: flowerItem!.id,
         product: flowerItem!,
         withTogether: false,
         count,
@@ -43,6 +43,13 @@ const Count = () => {
       })
     )
   }
+
+  useEffect(() => {
+    const found = cart.find((el) => el.id === flowerItem!.id)
+    if (found) {
+      setIsAdded(true)
+    } else false
+  }, [cart, flowerItem])
 
   return (
     <div className="flex mt-5">
