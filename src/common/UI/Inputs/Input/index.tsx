@@ -11,6 +11,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         className={`w-full font-roboto text-md bg-white py-3 px-5 border-none rounded-full ${styles}`}
         ref={ref}
         {...other}
+        autoComplete="off"
       />
     )
   }

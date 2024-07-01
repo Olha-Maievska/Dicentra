@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 import { z } from 'zod'
 import DarktBtn from '@/common/UI/Buttons/DarkBtn'
 import Phone from '@/common/components/QuickOrderPhone/components/Phone'
@@ -9,6 +9,11 @@ import { useAppDispatch, useAppSelector } from '@/hooks/hooks'
 import { resetRegistrationError, setUsers } from '@/features/users/usersSlice'
 import PasswordInput from '@/common/UI/Inputs/PasswordInput'
 import Input from '@/common/UI/Inputs/Input'
+import LoginVsRegisterBottom from '@/common/components/LoginVsRegisterBottom'
+
+interface RegistrationFormProps {
+  openLoginModal: () => void
+}
 
 const detailsShema = z
   .object({
@@ -30,7 +35,7 @@ const detailsShema = z
 
 type DetailsShemValues = z.infer<typeof detailsShema>
 
-const RegistrationForm = () => {
+const RegistrationForm: FC<RegistrationFormProps> = ({ openLoginModal }) => {
   const { registrationError, registrationStatus } = useAppSelector(
     (state) => state.users
   )
@@ -90,7 +95,7 @@ const RegistrationForm = () => {
   }, [registrationStatus, reset])
 
   return (
-    <form onSubmit={onSubmit} className="w-full">
+    <form onSubmit={onSubmit} className="w-full pb-[150px] relative" noValidate>
       <div className="mb-4">
         <Phone
           value={phoneInput}
@@ -166,6 +171,12 @@ const RegistrationForm = () => {
         width="w-full disabled:opacity-75 disabled:bg-dark"
         type="submit"
         disabled={phoneInput.length < 12}
+      />
+
+      <LoginVsRegisterBottom
+        text="Already have an account?"
+        btnText="Sign in"
+        openModal={openLoginModal}
       />
     </form>
   )

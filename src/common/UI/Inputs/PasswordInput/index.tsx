@@ -23,6 +23,7 @@ const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
           onFocus={onFocus}
           ref={ref}
           {...other}
+          autoComplete="off"
         />
         <PasswordIcon
           imgPath={imgPaswordPath}

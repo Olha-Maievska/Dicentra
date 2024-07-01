@@ -21,8 +21,8 @@ const Registration = () => {
     registrationStatus === 'success'
       ? 'Your registration was successful. Login to your account.'
       : registrationStatus === 'error'
-        ? 'Something went wrong. Please? try again!'
-        : 'Registration'
+      ? 'Something went wrong. Please? try again!'
+      : 'Registration'
 
   const handleCloseModal = () => {
     dispatch(setRegistrationModal(false))
@@ -61,12 +61,7 @@ const Registration = () => {
         />
       ) : (
         <>
-          <RegistrationForm />
-          <LoginVsRegisterBottom
-            text="Already have an account?"
-            btnText="Sign in"
-            openModal={openLoginModal}
-          />
+          <RegistrationForm openLoginModal={openLoginModal} />
         </>
       )}
     </Modal>

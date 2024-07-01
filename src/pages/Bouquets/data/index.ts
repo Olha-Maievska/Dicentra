@@ -648,8 +648,12 @@ export const flowersData: IFlowersData = [
         characteristic: {
           height: 70,
           width: 50,
-          color: ['Pink'],
-          compound: ['Pink peonies (23 pc)', 'Ribbon (1 pc)'],
+          color: ['Pink', 'White'],
+          compound: [
+            'Pink peonies (15 pc)',
+            'White peonies (7 pc)',
+            'Ribbon (1 pc)',
+          ],
           events: [
             'To beloved girlfriend',
             'Reconciliation',
@@ -679,11 +683,11 @@ export const flowersData: IFlowersData = [
         characteristic: {
           height: 60,
           width: 50,
-          color: ['Pink'],
+          color: ['Pink', 'White'],
           compound: [
             'Pink peonies (23 pc)',
             'White peonies (12 pc)',
-            'Ribbon (2 pc)',
+            'Ribbon (1 pc)',
           ],
           events: [
             'To beloved girlfriend',
@@ -939,7 +943,7 @@ export const flowersData: IFlowersData = [
         characteristic: {
           height: 70,
           width: 50,
-          color: ['Red'],
+          color: ['Lilac'],
           compound: ['Lilac roses (101 pc)', 'Ribbon (1 pc)'],
           events: [
             'To beloved girlfriend',
@@ -948,8 +952,6 @@ export const flowersData: IFlowersData = [
             'Engagement',
             'Wedding Anniversary',
             "Valentine's Day",
-            'To beloved girlfriend',
-            'Reconciliation',
           ],
         },
         reviews: [

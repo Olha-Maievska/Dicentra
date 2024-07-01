@@ -1,0 +1,16 @@
+.fixed-contend {
+  align-items: center;
+}
+
+@media (max-height: 850px) {
+  .fixed-contend {
+    padding-top: 30px;
+    align-items: start;
+  }
+}
+
+@media (max-height: 800px) {
+  .fixed-contend {
+    overflow-y: scroll;
+  }
+}

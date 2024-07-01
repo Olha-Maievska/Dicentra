@@ -5,6 +5,7 @@ export default {
     container: {
       screens: {
         '2xl': '1290px',
+        tall: { raw: '(min-height: 550px)' },
       },
       padding: '15px',
       center: true,

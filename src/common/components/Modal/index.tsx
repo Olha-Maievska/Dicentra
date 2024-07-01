@@ -1,6 +1,8 @@
 import { FC } from 'react'
 import { Drawer } from '@mui/material'
 
+import './modal.css'
+
 interface ModalProps {
   children: JSX.Element
   isOpen: boolean
@@ -13,7 +15,7 @@ const Modal: FC<ModalProps> = ({ children, isOpen, closeModal, title }) => {
     <>
       <Drawer anchor={'right'} open={isOpen} onClose={closeModal}>
         <div
-          className="w-[580px] h-full bg-light flex justify-center items-center "
+          className="w-[560px] h-full bg-light flex justify-center fixed-contend"
           onClick={(e) => e.stopPropagation()}
         >
           <div

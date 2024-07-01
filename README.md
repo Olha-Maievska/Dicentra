@@ -26,6 +26,7 @@ The site does not have responsive design, as it was created to demonstrate front
 
 - `public`
   - `images` - folder with all images
+  - `404.html` - redirect to 404 page
   - `favicon.ico` - favicon;
 - `src` - project's source code;
   - `common` - commom components and dto;

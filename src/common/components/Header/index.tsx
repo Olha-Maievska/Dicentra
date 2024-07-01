@@ -11,7 +11,7 @@ export const Header = () => {
     <>
       <header className="w-full bg-white flex flex-col items-center fixed z-40 pb-5">
         <div className="container">
-          <div className="mt-6 mb-8 flex items-center justify-between">
+          <div className="mt-6 mb-8 flex items-end justify-between">
             <Phone />
             <Logo />
 

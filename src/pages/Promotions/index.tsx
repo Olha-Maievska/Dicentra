@@ -35,9 +35,9 @@ const Promotions = () => {
                 {days} : {hours} : {minutes} : {seconds}
               </div>
               <div className="text-xs mb-3">
-                <span className="mr-9 ml-1">day</span>
-                <span className="mr-7">hour</span>
-                <span className="mr-9">min</span>
+                <span className="mr-10 ml-1">day</span>
+                <span className="mr-8">hour</span>
+                <span className="mr-10">min</span>
                 <span>sec</span>
               </div>
               <div>
