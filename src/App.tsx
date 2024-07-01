@@ -97,7 +97,7 @@ const router = createHashRouter(
       ],
     },
   ],
-  { basename: '/Dicentra' }
+  { basename: '/dicentra' }
 )
 
 export const App = () => <RouterProvider router={router} />
