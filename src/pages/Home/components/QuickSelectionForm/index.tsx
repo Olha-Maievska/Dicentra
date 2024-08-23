@@ -111,6 +111,7 @@ const QuickSelectionForm: FC<QuickSelectionFormProps> = ({ data }) => {
           <button
             className="py-5 px-16 bg-gold text-white rounded-xl text-base font-semibold font-ubuntu"
             type="submit"
+            disabled={!formData.flowers}
           >
             Select
           </button>
