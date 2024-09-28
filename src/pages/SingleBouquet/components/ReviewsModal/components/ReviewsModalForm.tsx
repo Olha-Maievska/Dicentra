@@ -35,7 +35,7 @@ const ReviewsModalForm = () => {
       })
 
       const comment = {
-        userID: currentUser!.id,
+        userID: currentUser ? currentUser!.id : crypto.randomUUID(),
         rating: currentIndex,
         createdAt: date,
         comment: data.comment,

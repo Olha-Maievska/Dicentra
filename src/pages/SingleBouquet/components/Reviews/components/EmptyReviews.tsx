@@ -1,17 +1,16 @@
 import GoldBtn from '@/common/UI/Buttons/GoldBtn'
-import { setLoginModal, setReviewsModal } from '@/features/modal/modalSlice'
-import { useAppDispatch, useAppSelector } from '@/hooks/hooks'
+import { setReviewsModal } from '@/features/modal/modalSlice'
+import { useAppDispatch } from '@/hooks/hooks'
 
 const EmptyReviews = () => {
-  const { currentUser } = useAppSelector((state) => state.users)
   const dispatch = useAppDispatch()
 
   const handleModalContent = () => {
-    if (!currentUser) {
-      dispatch(setLoginModal(true))
-    } else {
-      dispatch(setReviewsModal(true))
-    }
+    // if (!currentUser) {
+    //   dispatch(setLoginModal(true))
+    // } else {
+    dispatch(setReviewsModal(true))
+    // }
   }
 
   return (

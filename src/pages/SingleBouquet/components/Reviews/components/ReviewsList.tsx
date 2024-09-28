@@ -1,5 +1,5 @@
 import GoldBtn from '@/common/UI/Buttons/GoldBtn'
-import { setLoginModal, setReviewsModal } from '@/features/modal/modalSlice'
+import { setReviewsModal } from '@/features/modal/modalSlice'
 import { useAppDispatch, useAppSelector } from '@/hooks/hooks'
 import TotalRating from './TotalRating'
 import ReviewsItem from './ReviewsItem'
@@ -7,14 +7,13 @@ import ReviewsItem from './ReviewsItem'
 const ReviewsList = () => {
   const dispatch = useAppDispatch()
   const { flowerItem } = useAppSelector((state) => state.flowers)
-  const { currentUser } = useAppSelector((state) => state.users)
 
   const handleAddReview = () => {
-    if (!currentUser) {
-      dispatch(setLoginModal(true))
-    } else {
-      dispatch(setReviewsModal(true))
-    }
+    // if (!currentUser) {
+    //   dispatch(setLoginModal(true))
+    // } else {
+    dispatch(setReviewsModal(true))
+    // }
   }
 
   return (
